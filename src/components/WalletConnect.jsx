@@ -121,7 +121,7 @@ const WalletConnect = ({ onConnect, isConnecting }) => {
         >
           Download MetaMask →
         </a>
-      </div>
+      </motion.div>
     </div>
   );
 };
