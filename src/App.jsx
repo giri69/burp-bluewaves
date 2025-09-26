@@ -10,6 +10,7 @@ import Landing from './pages/Landing';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Cluster from './pages/Cluster';
+import ClusterInfo from './pages/ClusterInfo';
 import CoinDetail from './pages/CoinDetail';
 
 // Import components
@@ -96,6 +97,14 @@ const App = () => {
               element={
                 isAuthenticated ? 
                 <CoinDetail /> : 
+                <Navigate to="/login" replace />
+              } 
+            />
+            <Route 
+              path="/cluster-info/:id" 
+              element={
+                isAuthenticated ? 
+                <ClusterInfo /> : 
                 <Navigate to="/login" replace />
               } 
             />

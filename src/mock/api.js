@@ -93,12 +93,22 @@ const mockChatResponses = {
     {
       type: 'bot',
       message: "Welcome to DeFi Titans analysis! I'm your AI investment advisor. This cluster focuses on established DeFi protocols with strong fundamentals. What's your risk tolerance?",
-      timestamp: Date.now() - 5000
+      timestamp: Date.now() - 8000
+    },
+    {
+      type: 'user',
+      message: "I'm comfortable with medium risk investments. I'm looking for steady growth with some upside potential.",
+      timestamp: Date.now() - 6500
     },
     {
       type: 'bot', 
       message: "Based on current market conditions, DeFi Titans shows strong momentum with 12.5% APY. The cluster includes blue-chip protocols like UNI, AAVE, and MKR. What's your investment timeline?",
-      timestamp: Date.now() - 3000
+      timestamp: Date.now() - 5000
+    },
+    {
+      type: 'user',
+      message: "I'm planning to hold for 6-12 months. I want to benefit from the DeFi growth but not looking for day trading.",
+      timestamp: Date.now() - 3500
     },
     {
       type: 'bot',
@@ -111,16 +121,82 @@ const mockChatResponses = {
     {
       type: 'bot',
       message: "Welcome to AI Revolution! This is our highest-growth potential cluster focusing on artificial intelligence and machine learning tokens. How familiar are you with AI crypto projects?",
-      timestamp: Date.now() - 5000
+      timestamp: Date.now() - 8000
+    },
+    {
+      type: 'user',
+      message: "I have some knowledge about AI projects. I've been following the space and believe in the long-term potential of AI in crypto.",
+      timestamp: Date.now() - 6500
     },
     {
       type: 'bot',
       message: "Great! The AI sector is experiencing massive growth. This cluster includes RENDER for GPU computing, OCEAN for data marketplaces, and emerging AI agents. The risk is higher but so is the potential return at 18.7% APY. What's your risk appetite?",
-      timestamp: Date.now() - 3000
+      timestamp: Date.now() - 5000
+    },
+    {
+      type: 'user',
+      message: "I'm willing to take higher risks for higher returns. I understand the volatility and I'm prepared for it.",
+      timestamp: Date.now() - 3500
     },
     {
       type: 'bot',
       message: "Excellent choice for aggressive growth! Our AI has identified strong correlation patterns and momentum indicators across these tokens. The cluster is optimally balanced for maximum growth potential. Shall we proceed with this high-growth investment?",
+      timestamp: Date.now() - 1000,
+      isFinal: true
+    }
+  ],
+  'gaming-metaverse': [
+    {
+      type: 'bot',
+      message: "Welcome to Gaming & Metaverse analysis! This cluster captures the growing intersection of gaming, NFTs, and virtual worlds. Are you interested in the gaming and metaverse sectors?",
+      timestamp: Date.now() - 8000
+    },
+    {
+      type: 'user',
+      message: "Yes, I'm very interested in the metaverse. I think virtual worlds and blockchain gaming have huge potential as adoption grows.",
+      timestamp: Date.now() - 6500
+    },
+    {
+      type: 'bot',
+      message: "The gaming and metaverse space is rapidly evolving with major brands entering virtual worlds. This cluster includes SAND, MANA, and other leading metaverse tokens with 15.3% APY. How much exposure do you want to this sector?",
+      timestamp: Date.now() - 5000
+    },
+    {
+      type: 'user',
+      message: "I'd like moderate exposure - maybe 10-20% of my portfolio. I want to participate in the growth but not overexpose myself.",
+      timestamp: Date.now() - 3500
+    },
+    {
+      type: 'bot',
+      message: "Smart approach! This cluster provides diversified exposure across gaming, virtual land, and NFT ecosystems. The allocation is balanced to capture growth while managing sector concentration risk. Ready to enter the metaverse?",
+      timestamp: Date.now() - 1000,
+      isFinal: true
+    }
+  ],
+  'layer2-scaling': [
+    {
+      type: 'bot',
+      message: "Welcome to Layer 2 Scaling analysis! This cluster focuses on Ethereum scaling solutions and layer 2 protocols. Do you understand the importance of scaling solutions for blockchain adoption?",
+      timestamp: Date.now() - 8000
+    },
+    {
+      type: 'user',
+      message: "Yes, I know that high gas fees and slow transactions are major issues. Layer 2 solutions seem crucial for mainstream adoption.",
+      timestamp: Date.now() - 6500
+    },
+    {
+      type: 'bot',
+      message: "Exactly right! Layer 2 solutions are essential infrastructure for blockchain scalability. This cluster includes Polygon, Arbitrum, and Optimism with 14.2% APY. These protocols are seeing massive adoption growth. What's your investment thesis on infrastructure plays?",
+      timestamp: Date.now() - 5000
+    },
+    {
+      type: 'user',
+      message: "I believe infrastructure investments are solid long-term plays. They're like investing in the internet backbone - essential for everything built on top.",
+      timestamp: Date.now() - 3500
+    },
+    {
+      type: 'bot',
+      message: "Perfect analogy! Layer 2 infrastructure is indeed the backbone of the next generation of dApps. Our cluster captures the best-positioned scaling solutions with strong tokenomics and adoption. Shall we invest in the infrastructure layer?",
       timestamp: Date.now() - 1000,
       isFinal: true
     }

@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useParams, useNavigate } from 'react-router-dom';
 import { mockApi } from '../mock/api';
 import Chat from '../components/Chat';
+import ClusterSummary from '../components/ClusterSummary';
 import TreasureReveal from '../components/TreasureReveal';
 
 const Cluster = () => {
@@ -15,7 +16,8 @@ const Cluster = () => {
   const [cluster, setCluster] = useState(null);
   const [chatMessages, setChatMessages] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [showTreasure, setShowTreasure] = useState(false);
+  const [animationPhase, setAnimationPhase] = useState('initial'); // initial, treasure, summary
+  const [showSummary, setShowSummary] = useState(false);
   const [chatComplete, setChatComplete] = useState(false);
 
   // Load cluster data and chat messages
@@ -51,10 +53,15 @@ const Cluster = () => {
   // Handle user decision (Yes/No)
   const handleUserDecision = (decision) => {
     if (decision === 'yes') {
-      setShowTreasure(true);
+      setAnimationPhase('treasure');
     } else {
       navigate('/dashboard');
     }
+  };
+
+  // Handle treasure animation complete
+  const handleTreasureComplete = () => {
+    setShowSummary(true);
   };
 
   // Handle investment after treasure reveal
@@ -94,7 +101,7 @@ const Cluster = () => {
   return (
     <div className="min-h-screen bg-background">
       <AnimatePresence mode="wait">
-        {!showTreasure ? (
+        {animationPhase === 'initial' ? (
           <motion.div
             key="chat"
             initial={{ opacity: 0 }}
@@ -132,7 +139,7 @@ const Cluster = () => {
               clusterName={cluster.name}
             />
           </motion.div>
-        ) : (
+        ) : animationPhase === 'treasure' && !showSummary ? (
           <motion.div
             key="treasure"
             initial={{ opacity: 0 }}
@@ -141,7 +148,20 @@ const Cluster = () => {
           >
             <TreasureReveal 
               cluster={cluster}
-              onComplete={handleInvestment}
+              onComplete={handleTreasureComplete}
+            />
+          </motion.div>
+        ) : (
+          <motion.div
+            key="summary"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="min-h-screen flex items-center justify-center px-6"
+          >
+            <ClusterSummary 
+              cluster={cluster}
+              onInvest={handleInvestment}
+              onViewDetails={() => navigate(`/cluster-info/${cluster.id}`)}
             />
           </motion.div>
         )}

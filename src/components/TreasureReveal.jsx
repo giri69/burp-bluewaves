@@ -317,7 +317,7 @@ const TreasureReveal = ({ cluster, onComplete }) => {
                   onClick={onComplete}
                   className="px-12 py-4 bg-cta hover:bg-cta-hover text-cta-foreground text-lg font-semibold rounded-2xl transition-all duration-300 hover:shadow-xl hover:scale-105"
                 >
-                  Invest in {cluster.name}
+                  Continue to Cluster Summary
                 </motion.button>
               )}
             </motion.div>
