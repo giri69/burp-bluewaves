@@ -67,111 +67,45 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="min-h-screen dashboard-gradient relative">
-      {/* Futuristic Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-10 left-10 w-40 h-40 bg-gradient-to-r from-white to-gold opacity-20 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute top-32 right-20 w-32 h-32 bg-gradient-to-r from-gold-light to-gold opacity-30 rounded-full blur-2xl animate-float" style={{animationDelay: '2s'}}></div>
-        <div className="absolute bottom-40 left-1/4 w-48 h-48 bg-gradient-to-r from-gold to-gold-dark opacity-15 rounded-full blur-3xl animate-float" style={{animationDelay: '4s'}}></div>
-        <div className="absolute bottom-20 right-1/3 w-36 h-36 bg-gradient-to-r from-white to-gold-light opacity-25 rounded-full blur-2xl animate-float" style={{animationDelay: '1s'}}></div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-6 py-12 relative z-10">
-        {/* Enhanced Header */}
+    <div className="min-h-screen bg-background">
+      <div className="max-w-7xl mx-auto px-6 py-8">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-16 text-center"
+          className="mb-12"
         >
-          <motion.h1 
-            className="text-6xl font-bold mb-6 bg-gradient-to-r from-gold via-gold-light to-white bg-clip-text text-transparent"
-            animate={{
-              textShadow: [
-                "0 0 20px hsl(42, 100%, 50%, 0.3)",
-                "0 0 40px hsl(42, 100%, 50%, 0.6)",
-                "0 0 20px hsl(42, 100%, 50%, 0.3)"
-              ]
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          >
-            Investment Dashboard
-          </motion.h1>
-          <p className="text-2xl text-foreground font-medium">
-            Explore AI-curated cryptocurrency clusters with futuristic precision
+          <h1 className="text-4xl font-bold text-foreground mb-4">Investment Dashboard</h1>
+          <p className="text-xl text-muted-foreground">
+            Explore AI-curated cryptocurrency clusters or create your own custom portfolio
           </p>
         </motion.div>
 
-        {/* Futuristic Portfolio Overview */}
+        {/* Portfolio Overview */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid md:grid-cols-3 gap-8 mb-16"
+          className="grid md:grid-cols-3 gap-6 mb-12"
         >
-          <motion.div 
-            className="bg-gradient-to-br from-white via-gold-light to-gold rounded-3xl p-8 border-3 border-gold shadow-lg relative overflow-hidden group"
-            whileHover={{ scale: 1.02, y: -4 }}
-            animate={{
-              boxShadow: [
-                "0 8px 32px hsl(42, 100%, 50%, 0.2)",
-                "0 12px 40px hsl(42, 100%, 50%, 0.4)",
-                "0 8px 32px hsl(42, 100%, 50%, 0.2)"
-              ]
-            }}
-            transition={{
-              boxShadow: { duration: 3, repeat: Infinity }
-            }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <h3 className="text-lg font-bold text-foreground mb-3 relative z-10">Total Portfolio Value</h3>
-            <p className="text-4xl font-bold text-foreground mb-2 relative z-10">$12,847.32</p>
-            <p className="text-green-600 text-lg font-semibold relative z-10">+8.2% (24h)</p>
-          </motion.div>
+          <div className="card-gradient rounded-2xl p-6">
+            <h3 className="text-lg font-semibold text-muted-foreground mb-2">Total Portfolio Value</h3>
+            <p className="text-3xl font-bold text-foreground">$12,847.32</p>
+            <p className="text-green-600 text-sm mt-1">+8.2% (24h)</p>
+          </div>
           
-          <motion.div 
-            className="bg-gradient-to-br from-white via-gold-light to-gold rounded-3xl p-8 border-3 border-gold shadow-lg relative overflow-hidden group"
-            whileHover={{ scale: 1.02, y: -4 }}
-            animate={{
-              boxShadow: [
-                "0 8px 32px hsl(42, 100%, 50%, 0.2)",
-                "0 12px 40px hsl(42, 100%, 50%, 0.4)",
-                "0 8px 32px hsl(42, 100%, 50%, 0.2)"
-              ]
-            }}
-            transition={{
-              boxShadow: { duration: 3, repeat: Infinity, delay: 1 }
-            }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <h3 className="text-lg font-bold text-foreground mb-3 relative z-10">Active Clusters</h3>
-            <p className="text-4xl font-bold text-foreground mb-2 relative z-10">3</p>
-            <p className="text-blue-600 text-lg font-semibold relative z-10">2 outperforming market</p>
-          </motion.div>
+          <div className="card-gradient rounded-2xl p-6">
+            <h3 className="text-lg font-semibold text-muted-foreground mb-2">Active Clusters</h3>
+            <p className="text-3xl font-bold text-foreground">3</p>
+            <p className="text-cta text-sm mt-1">2 outperforming market</p>
+          </div>
           
-          <motion.div 
-            className="bg-gradient-to-br from-white via-gold-light to-gold rounded-3xl p-8 border-3 border-gold shadow-lg relative overflow-hidden group"
-            whileHover={{ scale: 1.02, y: -4 }}
-            animate={{
-              boxShadow: [
-                "0 8px 32px hsl(42, 100%, 50%, 0.2)",
-                "0 12px 40px hsl(42, 100%, 50%, 0.4)",
-                "0 8px 32px hsl(42, 100%, 50%, 0.2)"
-              ]
-            }}
-            transition={{
-              boxShadow: { duration: 3, repeat: Infinity, delay: 2 }
-            }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <h3 className="text-lg font-bold text-foreground mb-3 relative z-10">Average APY</h3>
-            <p className="text-4xl font-bold text-foreground mb-2 relative z-10">15.1%</p>
-            <p className="text-green-600 text-lg font-semibold relative z-10">Above market average</p>
-          </motion.div>
+          <div className="card-gradient rounded-2xl p-6">
+            <h3 className="text-lg font-semibold text-muted-foreground mb-2">Average APY</h3>
+            <p className="text-3xl font-bold text-foreground">15.1%</p>
+            <p className="text-green-600 text-sm mt-1">Above market average</p>
+          </div>
         </motion.div>
 
         {/* Clusters Grid */}
@@ -191,115 +125,51 @@ const Dashboard = () => {
             </motion.div>
           ))}
 
-          {/* Futuristic Create Your Own Cluster Card */}
+          {/* Create Your Own Cluster Card */}
           <motion.div variants={itemVariants}>
-            <motion.div 
+            <div 
               onClick={() => console.log('Create custom cluster - feature coming soon')}
-              className="bg-gradient-to-br from-white via-gold-light to-gold rounded-3xl p-10 h-full min-h-[400px] flex flex-col items-center justify-center text-center cursor-pointer border-4 border-dashed border-gold hover:border-gold-dark transition-all duration-500 relative overflow-hidden group"
-              whileHover={{ scale: 1.02, y: -8 }}
-              animate={{
-                boxShadow: [
-                  "0 8px 32px hsl(42, 100%, 50%, 0.2)",
-                  "0 12px 40px hsl(42, 100%, 50%, 0.4)",
-                  "0 8px 32px hsl(42, 100%, 50%, 0.2)"
-                ]
-              }}
-              transition={{
-                boxShadow: { duration: 3, repeat: Infinity, delay: 3 }
-              }}
+              className="cluster-card rounded-2xl p-8 h-full min-h-[300px] flex flex-col items-center justify-center text-center cursor-pointer border-2 border-dashed border-primary hover:border-cta transition-all duration-300"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              
-              <motion.div 
-                className="w-28 h-28 bg-gradient-to-br from-gold to-gold-dark rounded-3xl flex items-center justify-center mb-8 relative z-10"
-                animate={{
-                  rotate: [0, 360],
-                  scale: [1, 1.1, 1]
-                }}
-                transition={{
-                  rotate: { duration: 20, repeat: Infinity, ease: "linear" },
-                  scale: { duration: 3, repeat: Infinity, ease: "easeInOut" }
-                }}
-              >
-                <svg className="w-14 h-14 text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+              <div className="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center mb-6">
+                <svg className="w-10 h-10 text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                 </svg>
-              </motion.div>
+              </div>
               
-              <h3 className="text-2xl font-bold text-foreground mb-6 relative z-10">Create Your Own Cluster</h3>
-              <p className="text-foreground text-lg mb-8 leading-relaxed relative z-10">
+              <h3 className="text-xl font-semibold text-foreground mb-4">Create Your Own Cluster</h3>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
                 Build a custom investment cluster with your preferred tokens and allocation strategy
               </p>
               
-              <motion.div 
-                className="inline-flex items-center text-foreground font-bold text-xl relative z-10"
-                animate={{
-                  x: [0, 8, 0]
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              >
+              <div className="inline-flex items-center text-cta font-medium">
                 <span>Get Started</span>
-                <svg className="ml-3 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
           </motion.div>
         </motion.div>
 
-        {/* Futuristic Quick Actions */}
+        {/* Quick Actions */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-20 text-center"
+          className="mt-16 text-center"
         >
-          <motion.h2 
-            className="text-3xl font-bold mb-10 bg-gradient-to-r from-gold via-gold-light to-white bg-clip-text text-transparent"
-            animate={{
-              textShadow: [
-                "0 0 10px hsl(42, 100%, 50%, 0.3)",
-                "0 0 20px hsl(42, 100%, 50%, 0.6)",
-                "0 0 10px hsl(42, 100%, 50%, 0.3)"
-              ]
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          >
-            Quick Actions
-          </motion.h2>
-          <div className="flex flex-wrap justify-center gap-6">
-            <motion.button 
-              className="px-8 py-4 bg-gradient-to-r from-white via-gold-light to-gold text-foreground rounded-2xl font-bold text-lg transition-all duration-300 border-3 border-gold shadow-lg relative overflow-hidden group"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <span className="relative z-10">View All Transactions</span>
-            </motion.button>
-            <motion.button 
-              className="px-8 py-4 bg-gradient-to-r from-white via-gold-light to-gold text-foreground rounded-2xl font-bold text-lg transition-all duration-300 border-3 border-gold shadow-lg relative overflow-hidden group"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <span className="relative z-10">Portfolio Analytics</span>
-            </motion.button>
-            <motion.button 
-              className="px-8 py-4 bg-gradient-to-r from-white via-gold-light to-gold text-foreground rounded-2xl font-bold text-lg transition-all duration-300 border-3 border-gold shadow-lg relative overflow-hidden group"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <span className="relative z-10">Rebalancing History</span>
-            </motion.button>
+          <h2 className="text-2xl font-bold text-foreground mb-6">Quick Actions</h2>
+          <div className="flex flex-wrap justify-center gap-4">
+            <button className="px-6 py-3 bg-secondary hover:bg-accent text-secondary-foreground rounded-xl font-medium transition-colors duration-300">
+              View All Transactions
+            </button>
+            <button className="px-6 py-3 bg-secondary hover:bg-accent text-secondary-foreground rounded-xl font-medium transition-colors duration-300">
+              Portfolio Analytics
+            </button>
+            <button className="px-6 py-3 bg-secondary hover:bg-accent text-secondary-foreground rounded-xl font-medium transition-colors duration-300">
+              Rebalancing History
+            </button>
           </div>
         </motion.div>
       </div>
